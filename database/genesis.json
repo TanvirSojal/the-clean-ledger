@@ -1,0 +1,7 @@
+{
+    "genesis_time": "2022-09-18T00:00:00.000000000Z",
+    "chain_id": "the-clean-ledger",
+    "balances": {
+        "sojal": 1000000
+    }
+}
