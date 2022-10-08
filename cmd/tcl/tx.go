@@ -39,11 +39,12 @@ func txAddCmd() *cobra.Command {
 			from, _ := cmd.Flags().GetString(flagFrom)
 			to, _ := cmd.Flags().GetString(flagTo)
 			value, _ := cmd.Flags().GetUint(flagValue)
+			data, _ := cmd.Flags().GetString(flagData)
 
 			fromAcc := database.NewAccount(from)
 			toAcc := database.NewAccount(to)
 
-			tx := database.NewTx(fromAcc, toAcc, value, "")
+			tx := database.NewTx(fromAcc, toAcc, value, data)
 
 			state, err := database.NewStateFromDisk()
 
