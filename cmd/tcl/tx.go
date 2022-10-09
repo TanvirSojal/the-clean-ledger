@@ -62,14 +62,14 @@ func txAddCmd() *cobra.Command {
 				os.Exit(1)
 			}
 
-			err = state.Persist()
+			snapshot, err := state.Persist()
 
 			if err != nil {
 				fmt.Fprintln(os.Stderr, err)
 				os.Exit(1)
 			}
 
-			fmt.Println("TX successfully added to the ledger.")
+			fmt.Printf("TX successfully added to the ledger. New DB Snapshot: %x\n", snapshot)
 		},
 	}
 
