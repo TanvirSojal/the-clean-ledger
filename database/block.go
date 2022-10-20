@@ -18,17 +18,17 @@ func (h *Hash) UnmarshalText(data []byte) error {
 }
 
 type Block struct {
-	Header BlockHeader // metadata
-	TXs    []Tx        // new transactions only
+	Header BlockHeader `json:"header"`  // metadata
+	TXs    []Tx        `json:"payload"` // new transactions only
 }
 
 type BlockHeader struct {
-	Parent Hash // parent block reference
-	Time   uint64
+	Parent Hash		`json:"parent"` // parent block reference
+	Time   uint64	`json:"time"`
 }
 
 type BlockFS struct {
-	Key Hash `json:"hash"`
+	Key Hash 	`json:"hash"`
 	Value Block `json:"block"`
 }
 
